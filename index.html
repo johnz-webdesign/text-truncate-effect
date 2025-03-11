@@ -4,47 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Truncate</title>
+    <title>Smooth Text Truncation</title>
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div style="max-width: 500px;">
-        <p class="truncate-single">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-            Latin literature
-            from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College
-            in Virginia,
-            looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through
-            the cites of
-            the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-            and 1.10.33
-            of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is
-            a treatise
-            on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum
-            dolor sit
-            amet..", comes from a line in section 1.10.32.
-        </p>
+    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h1>Smooth Text Truncation Demo</h1>
+
+        <h2>Single Line Truncation</h2>
+        <div class="truncate-single">
+            This is a single line of text that will be truncated with an ellipsis if it exceeds the available width.
+            Click to expand and see the full text. When expanded, you'll see the entire content without any truncation.
+        </div>
+
+        <h2>Multi-line Truncation (6 lines)</h2>
+        <div class="truncate-multi">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor
+            dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac
+            euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis
+            mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu
+            est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas
+            consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque
+            sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel
+            velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus
+            convallis consequat. Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat
+            bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non
+            neque consectetur quis placerat neque lobortis.
+        </div>
+
+        <h2>Short Multi-line (Won't Show Gradient)</h2>
+        <div class="truncate-multi">
+            This text is short enough that it fits within the visible lines limit, so it won't show a gradient or
+            truncation effect.
+        </div>
     </div>
 
-    <div style="max-width: 500px;">
-        <p class="truncate-multi">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-            Latin literature
-            from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College
-            in Virginia,
-            looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through
-            the cites of
-            the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-            and 1.10.33
-            of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is
-            a treatise
-            on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum
-            dolor sit
-            amet..", comes from a line in section 1.10.32.
-        </p>
-    </div>
-
+    <script src="text-truncate.js"></script>
 </body>
 
 </html>

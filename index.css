@@ -1,27 +1,58 @@
 .truncate-single {
-  max-height: 24px; /* Text line-height here */
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  transition: all 5s ease;
   cursor: pointer;
+  position: relative;
+  height: 24px; /* Single line height */
+  transition: height 0.4s ease;
+}
+
+.truncate-single.expanded {
+  white-space: normal;
+}
+
+.truncate-multi {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  /* Initial height will be set by JS */
+  transition: height 0.4s ease;
+}
+
+/* Optional fade effect for bottom of truncated text */
+.truncate-single::after,
+.truncate-multi::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.truncate-single.expanded::after,
+.truncate-multi.expanded::after {
+  opacity: 0;
+}
+
+/* Hide the fade gradient when text fits without truncation */
+.truncate-single.fits-content::after,
+.truncate-multi.fits-content::after {
+  display: none;
 }
 
 .truncate-single:hover {
   max-height: 3000px;
   white-space: normal; /* Remove truncation */
-}
-
-.truncate-multi {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: all 5s ease;
-  cursor: pointer;
-  will-change: max-height, white-space;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
 }
 
 .truncate-multi:hover {
@@ -34,8 +65,3 @@
   max-height: 144px; /* Text line-height * 5 here */
   transition: all 5s ease;
 }
-
-
-
-
-
