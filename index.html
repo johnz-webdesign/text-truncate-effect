@@ -6,10 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smooth Text Truncation</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Ensure consistent line height */
+        .truncate-single,
+        .truncate-multi {
+            line-height: 24px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+
+        /* Visual indicator for expandable text */
+        .truncate-single::after,
+        .truncate-multi::after {
+            content: "↓";
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        /* Hide indicator on hover */
+        .truncate-single:hover::after,
+        .truncate-multi:hover::after {
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div class="container">
         <h1>Smooth Text Truncation Demo</h1>
 
         <h2>Single Line Truncation</h2>
@@ -33,10 +72,10 @@
             neque consectetur quis placerat neque lobortis.
         </div>
 
-        <h2>Short Multi-line (Won't Show Gradient)</h2>
+        <h2>Short Multi-line (Fits in 6 lines)</h2>
         <div class="truncate-multi">
-            This text is short enough that it fits within the visible lines limit, so it won't show a gradient or
-            truncation effect.
+            This text is short enough that it fits within the visible lines limit, so it won't show truncation.
+            You should see the entire content without any ellipsis.
         </div>
     </div>
 
