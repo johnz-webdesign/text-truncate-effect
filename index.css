@@ -1,0 +1,41 @@
+.truncate-single {
+  max-height: 24px; /* Text line-height here */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all 5s ease;
+  cursor: pointer;
+}
+
+.truncate-single:hover {
+  max-height: 3000px;
+  white-space: normal; /* Remove truncation */
+}
+
+.truncate-multi {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 5s ease;
+  cursor: pointer;
+  will-change: max-height, white-space;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
+.truncate-multi:hover {
+  max-height: 2000px; /* Large enough to fit all content */
+  -webkit-line-clamp: unset; /* Allow full content display */
+  white-space: normal; /* Wrap text */
+}
+
+.truncate-multi:not(:hover) {
+  max-height: 144px; /* Text line-height * 5 here */
+  transition: all 5s ease;
+}
+
+
+
+
+
